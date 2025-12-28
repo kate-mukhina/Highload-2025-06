@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SocialNetwork.Api/SocialNetwork.Api.csproj" />
+  <Project Path="SocialNetwork.Data/SocialNetwork.Data.csproj" />
+  <Project Path="SocialNetwork.Domain/SocialNetwork.Domain.csproj" />
+</Solution>
