@@ -23,7 +23,15 @@ namespace SocialNetwork.Data.Repositories
 
         public async Task<User?> GetUserByIdAsync(int id)
         {
-            const string sql = "SELECT id, first_name, last_name, date_of_birth, gender, interests, city FROM users WHERE id = @Id";
+            const string sql = @"SELECT
+                                    id,
+                                    first_name AS FirstName,
+                                    last_name AS LastName,
+                                    date_of_birth::TIMESTAMP AS DateOfBirth,
+                                    gender,
+                                    interests,
+                                    city
+                                FROM users WHERE id = @Id";
             using var connection = _connectionFactory.CreateConnection();
             return await connection.QueryFirstOrDefaultAsync<User>(sql, new { Id = id });
         }
